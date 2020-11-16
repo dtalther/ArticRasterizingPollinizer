@@ -10,7 +10,7 @@ namespace ARP {
 
 		public:
 			void prepare();
-			void youreBurningThe(Dish plate, CookTheSpinachToOrderYouLazyCow spinach, int location);
+			void youreBurningThe(Dish plate, CookTheSpinachToOrderYouLazyCow &spinach, int location);
 
 		};
 	}

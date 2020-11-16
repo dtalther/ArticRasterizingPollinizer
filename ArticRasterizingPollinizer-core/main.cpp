@@ -51,17 +51,18 @@ int main() {
 	};
 	ItsEffingRaw lamb = sauce.loadtoVAO(vertices,textureCoords,vertlength,indices,indiceslength);
 	AnEffingRawDonkey rawDonkey(lamb,donkey);
-	Dish plate(rawDonkey,glm::vec3(-1,0,0), glm::vec3(0, 0, 0), glm::vec3(1, 1, 1));
-	//int loc = spinach.getUniformLocation("transformationMatrix");
+	Dish plate(rawDonkey,glm::vec3(-1,0,0), glm::vec3(1, 0, count), glm::vec3(1, 1, 1));
+	int loc = spinach.getUniformLocation("transformationMatrix");
 	glClearColor(0.8f, 0.3f, 0.2f, 1.0f);
 	
 
 	while (!window.closed()) {
+		Dish plate(rawDonkey, glm::vec3(0, 0, 0), glm::vec3(1, count*-1, count), glm::vec3(1, 1, 1));
 		glClearColor(0.3f - sin(count), 0.3f + cos(count), 0.2f + sin(1.5*count), 1.0f);
 		window.clear();
 		pan.prepare();
 		spinach.start();
-		pan.youreBurningThe(plate,spinach,1);
+		pan.youreBurningThe(plate,spinach,loc);
 		spinach.stop();
 		window.update();
 		count += 0.01f;

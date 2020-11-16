@@ -25,6 +25,7 @@ CookTheSpinachToOrderYouLazyCow::CookTheSpinachToOrderYouLazyCow(std::string vfi
 
 CookTheSpinachToOrderYouLazyCow::~CookTheSpinachToOrderYouLazyCow() {
     stop();
+    printf("cya kid\n");
     glDetachShader(programID, vID);
     glDetachShader(programID, fID);
     glDeleteShader(vID);
