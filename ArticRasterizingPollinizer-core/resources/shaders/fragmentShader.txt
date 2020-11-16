@@ -4,9 +4,9 @@ in vec2 pass_texCoords;
 
 out vec4 out_Color;
 
-uniform sampler2D texSampler;
+//uniform sampler2D texSampler;
 void main(void){
-	vec4 z = texture(texSampler,pass_texCoords);
-	vec4 q = vec4(pass_texCoords.x,pass_texCoords.y,0,1);
-	out_Color = (z+q)/vec4(2,2,2,2);
+	//vec4 z = texture(texSampler,pass_texCoords);
+	//vec4 q = vec4(pass_texCoords.x,pass_texCoords.y,0,1);
+	out_Color = vec4(1,0,0,1);
 }

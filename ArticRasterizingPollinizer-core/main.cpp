@@ -9,6 +9,8 @@
 #include "CookTheSpinachToOrderYouLazyCow.h"
 #include "EffingDonkey.h"
 #include "AnEffingRawDonkey.h"
+#include "Dish.h"
+#include "glm.hpp"
 int main() {
 	using namespace ARP;
 	using namespace HellsKitchen;
@@ -49,15 +51,17 @@ int main() {
 	};
 	ItsEffingRaw lamb = sauce.loadtoVAO(vertices,textureCoords,vertlength,indices,indiceslength);
 	AnEffingRawDonkey rawDonkey(lamb,donkey);
-	 
+	Dish plate(rawDonkey,glm::vec3(-1,0,0), glm::vec3(0, 0, 0), glm::vec3(1, 1, 1));
+	//int loc = spinach.getUniformLocation("transformationMatrix");
 	glClearColor(0.8f, 0.3f, 0.2f, 1.0f);
+	
+
 	while (!window.closed()) {
 		glClearColor(0.3f - sin(count), 0.3f + cos(count), 0.2f + sin(1.5*count), 1.0f);
 		window.clear();
 		pan.prepare();
 		spinach.start();
-		//game logic
-		pan.youreBurningThe(rawDonkey);
+		pan.youreBurningThe(plate,spinach,1);
 		spinach.stop();
 		window.update();
 		count += 0.01f;

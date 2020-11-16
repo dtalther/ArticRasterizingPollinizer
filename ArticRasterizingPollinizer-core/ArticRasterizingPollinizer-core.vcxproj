@@ -74,12 +74,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Daniel\source\repos\ArticRasterizingPollinizer\Dependencies\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\Daniel\source\repos\ArticRasterizingPollinizer\Dependencies\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,7 +101,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/Libs/GLFW/include;$(SolutionDir)/Libs/GLEW/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Daniel\source\repos\ArticRasterizingPollinizer\Dependencies\glm;$(SolutionDir)/Libs/GLFW/include;$(SolutionDir)/Libs/GLEW/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/Libs/GLFW/include;$(SolutionDir)/Libs/GLEW/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Daniel\source\repos\ArticRasterizingPollinizer\Dependencies\glm;$(SolutionDir)/Libs/GLFW/include;$(SolutionDir)/Libs/GLEW/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="AnEffingRawDonkey.cpp" />
     <ClCompile Include="CookTheSpinachToOrderYouLazyCow.cpp" />
+    <ClCompile Include="Dish.cpp" />
     <ClCompile Include="EffingDonkey.cpp" />
     <ClCompile Include="ItsEffingRaw.cpp" />
     <ClCompile Include="main.cpp" />
@@ -157,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="AnEffingRawDonkey.h" />
     <ClInclude Include="CookTheSpinachToOrderYouLazyCow.h" />
+    <ClInclude Include="Dish.h" />
     <ClInclude Include="EffingDonkey.h" />
     <ClInclude Include="ItsEffingRaw.h" />
     <ClInclude Include="stb_image.h" />

@@ -1,9 +1,10 @@
 #include "CookTheSpinachToOrderYouLazyCow.h"
-
 #include "Util.h"
 
 
+
 using namespace ARP::HellsKitchen;
+using namespace std;
 
 CookTheSpinachToOrderYouLazyCow::CookTheSpinachToOrderYouLazyCow(std::string vfilename, std::string ffilename) {
     this->vshaderCode = ARP::Utilites::readwholefile(vfilename);
@@ -30,6 +31,30 @@ CookTheSpinachToOrderYouLazyCow::~CookTheSpinachToOrderYouLazyCow() {
     glDeleteShader(fID);
     glDeleteProgram(programID);
 }
+
+int CookTheSpinachToOrderYouLazyCow::getUniformLocation(std::string uniformName) {
+    const char* str = uniformName.c_str();
+    return glGetUniformLocation(programID, str);
+}
+
+void CookTheSpinachToOrderYouLazyCow::loadFloat(int location, float value) {
+    glUniform1f(location,value);
+}
+void CookTheSpinachToOrderYouLazyCow::loadVector(int location, glm::vec3 vec) {
+    glUniform3f(location, vec.x, vec.y, vec.z);
+}
+void CookTheSpinachToOrderYouLazyCow::loadBoolean(int location, bool value) {
+    float toLoad = 0;
+    if (value) {
+        toLoad = 1;
+    }
+    glUniform1f(location,toLoad);
+}
+void CookTheSpinachToOrderYouLazyCow::loadMatrix(int location, glm::mat4 matrix) {
+    glUniformMatrix4fv(location,1,false,glm::value_ptr(matrix));
+}
+
+
 
 void CookTheSpinachToOrderYouLazyCow::start() {
     glUseProgram(programID);
