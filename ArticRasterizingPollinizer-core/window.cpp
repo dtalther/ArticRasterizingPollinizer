@@ -41,7 +41,8 @@ namespace ARP {
 			glfwPollEvents();
 			glfwGetFramebufferSize(window, &width, &height);
 			//glViewport(0, 0, width, height);
-			glfwSwapBuffers(window);			
+			glfwSwapBuffers(window);		
+			glfwGetWindowSize(window,&width,&height);
 		}
 		void windowResize(GLFWwindow* window, int width, int height) {
 			glViewport(0,0,width,height);

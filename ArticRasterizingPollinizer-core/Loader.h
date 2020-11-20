@@ -15,7 +15,7 @@ namespace ARP {
 			std::vector<int> vbolist;
 			std::vector<int> textures;
 		public:
-			RawModel loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength);
+			RawModel loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength, int tlength);
 			int loadTexture(std::string filename);
 			~Loader();
 		};

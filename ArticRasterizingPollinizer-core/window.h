@@ -7,7 +7,7 @@ namespace ARP {
 			private:
 				int width, height;
 				const char* name;
-				GLFWwindow* window;
+				
 				bool isclosed;
 			public:
 				Window(const char* name, int width, int height);
@@ -15,7 +15,7 @@ namespace ARP {
 				void clear();
 				void update();
 				bool closed() const;
-
+				GLFWwindow* window;
 				int getwidth() { return width; };
 				int getheight() { return height; };
 

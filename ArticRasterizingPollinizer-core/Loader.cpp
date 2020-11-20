@@ -16,11 +16,11 @@ Loader::~Loader() {
 		glDeleteTextures(1,&texture);
 	}
 }
-RawModel Loader::loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength) {
+RawModel Loader::loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength, int tlength) {
 	int vaoID = createVAO();
 	bindIndicesBuffer(indices, ilength);
 	storeDataInAttributeList(0,positions,length,3);
-	storeDataInAttributeList(1, textureCoords, 8, 2);
+	storeDataInAttributeList(1, textureCoords, tlength, 2);
 	unbindVAO();
 	RawModel sauce(vaoID, ilength);
 	return sauce;
