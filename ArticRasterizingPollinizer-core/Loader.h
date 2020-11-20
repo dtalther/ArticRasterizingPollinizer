@@ -1,11 +1,11 @@
 #pragma once
-#include "ItsEffingRaw.h"
+#include "RawModel.h"
 #include <vector>
 #include <iostream>
 
 namespace ARP {
 	namespace HellsKitchen {
-		class WheresTheLambSauce {
+		class Loader {
 		private:
 			int createVAO();
 			void storeDataInAttributeList(int attributenumber,float* data, int length, int coordSize);
@@ -15,9 +15,9 @@ namespace ARP {
 			std::vector<int> vbolist;
 			std::vector<int> textures;
 		public:
-			ItsEffingRaw loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength);
-			int whatIsThat(std::string filename);
-			~WheresTheLambSauce();
+			RawModel loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength);
+			int loadTexture(std::string filename);
+			~Loader();
 		};
 	}
 }

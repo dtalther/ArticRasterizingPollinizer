@@ -10,7 +10,7 @@
 
 namespace ARP {
 	namespace HellsKitchen {
-		class CookTheSpinachToOrderYouLazyCow {
+		class BasicShader {
 		private:
 			std::string vshaderCode;
 			std::string fshaderCode;
@@ -19,8 +19,8 @@ namespace ARP {
 			GLuint programID;
 			bool compileShader(std::string code, int ID);
 		public:
-			CookTheSpinachToOrderYouLazyCow(std::string vertexfilename, std::string fragmentfilename);
-			~CookTheSpinachToOrderYouLazyCow();
+			BasicShader(std::string vertexfilename, std::string fragmentfilename);
+			~BasicShader();
 			std::string vgetShaderCode() { return vshaderCode; };
 			std::string fgetShaderCode() { return fshaderCode; };
 			int getUniformLocation(std::string uniformName);

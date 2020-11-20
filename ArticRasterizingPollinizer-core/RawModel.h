@@ -2,12 +2,12 @@
 
 namespace ARP {
 	namespace HellsKitchen {
-		class ItsEffingRaw {
+		class RawModel {
 		private:
 			int vaoID;
 			int vertexcount;
 		public:
-			ItsEffingRaw(int vaoID, int vertexcount);
+			RawModel(int vaoID, int vertexcount);
 			int getvaoID() { return vaoID; }
 			int getvertexcount() { return vertexcount; }
 		};

@@ -146,28 +146,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AnEffingRawDonkey.cpp" />
-    <ClCompile Include="CookTheSpinachToOrderYouLazyCow.cpp" />
-    <ClCompile Include="Dish.cpp" />
-    <ClCompile Include="EffingDonkey.cpp" />
-    <ClCompile Include="ItsEffingRaw.cpp" />
+    <ClCompile Include="TexturedModel.cpp" />
+    <ClCompile Include="BasicShader.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="RawModel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Util.cpp" />
-    <ClCompile Include="WheresTheLambSauce.cpp" />
+    <ClCompile Include="Loader.cpp" />
     <ClCompile Include="window.cpp" />
-    <ClCompile Include="YoureCookingInABurnedPanYouEffingDick.cpp" />
+    <ClCompile Include="BasicRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnEffingRawDonkey.h" />
-    <ClInclude Include="CookTheSpinachToOrderYouLazyCow.h" />
-    <ClInclude Include="Dish.h" />
-    <ClInclude Include="EffingDonkey.h" />
-    <ClInclude Include="ItsEffingRaw.h" />
+    <ClInclude Include="TexturedModel.h" />
+    <ClInclude Include="BasicShader.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="RawModel.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Util.h" />
-    <ClInclude Include="WheresTheLambSauce.h" />
+    <ClInclude Include="Loader.h" />
     <ClInclude Include="window.h" />
-    <ClInclude Include="YoureCookingInABurnedPanYouEffingDick.h" />
+    <ClInclude Include="BasicRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="resources\shaders\fragmentShader.txt" />

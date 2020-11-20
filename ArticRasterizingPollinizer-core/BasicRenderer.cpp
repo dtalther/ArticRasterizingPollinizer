@@ -1,5 +1,5 @@
 #define GLEW_STATIC
-#include "YoureCookingInABurnedPanYouEffingDick.h"
+#include "BasicRenderer.h"//BasicRenderer
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
@@ -9,13 +9,13 @@
 
 using namespace ARP::HellsKitchen;
 using namespace ARP;
-void YourCookingInABurnedPanYouEffingDick::prepare() {
+void BasicRenderer::prepare() {
 	//glClearColor(1,0,0,1);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
-void YourCookingInABurnedPanYouEffingDick::youreBurningThe(Dish plate, CookTheSpinachToOrderYouLazyCow &spinach, int location) {
-	AnEffingRawDonkey rawdonkey = plate.getDonkey();
-	ItsEffingRaw food = rawdonkey.raw;
+void BasicRenderer::youreBurningThe(Entity plate, BasicShader &spinach, int location) {
+	TexturedModel rawdonkey = plate.getDonkey();
+	RawModel food = rawdonkey.raw;
 	glBindVertexArray(food.getvaoID());
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);

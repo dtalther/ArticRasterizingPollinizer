@@ -1,11 +1,11 @@
 #pragma once
 namespace ARP {
 	namespace HellsKitchen {
-		class EffingDonkey {
+		class Texture {
 		private:
 			int textureID;
 		public:
-			EffingDonkey(int textureID);
+			Texture(int textureID);
 			int getTextureID();
 		};
 	}

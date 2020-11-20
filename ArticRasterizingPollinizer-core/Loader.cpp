@@ -1,5 +1,5 @@
 #define GLEW_STATIC
-#include "WheresTheLambSauce.h"
+#include "Loader.h"//Loader
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #define STB_IMAGE_IMPLEMENTATION
@@ -7,7 +7,7 @@
 
 using namespace ARP::HellsKitchen;
 
-WheresTheLambSauce::~WheresTheLambSauce() {
+Loader::~Loader() {
 	for (GLuint vao : vaolist)
 		glDeleteVertexArrays(1, &vao);
 	for (GLuint vbo : vbolist)
@@ -16,17 +16,17 @@ WheresTheLambSauce::~WheresTheLambSauce() {
 		glDeleteTextures(1,&texture);
 	}
 }
-ItsEffingRaw WheresTheLambSauce::loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength) {
+RawModel Loader::loadtoVAO(float* positions, float* textureCoords, int length, int* indices, int ilength) {
 	int vaoID = createVAO();
 	bindIndicesBuffer(indices, ilength);
 	storeDataInAttributeList(0,positions,length,3);
 	storeDataInAttributeList(1, textureCoords, 8, 2);
 	unbindVAO();
-	ItsEffingRaw sauce(vaoID, ilength);
+	RawModel sauce(vaoID, ilength);
 	return sauce;
 
 }
-int ARP::HellsKitchen::WheresTheLambSauce::whatIsThat(std::string filename)
+int ARP::HellsKitchen::Loader::loadTexture(std::string filename)
 {//texture loader
 	int width, height, channels;
 	GLuint textureID;
@@ -44,14 +44,14 @@ int ARP::HellsKitchen::WheresTheLambSauce::whatIsThat(std::string filename)
 	return (int)textureID;
 
 }
-int WheresTheLambSauce::createVAO() {
+int Loader::createVAO() {
 	GLuint vaoID = 0;
 	glGenVertexArrays(1,&vaoID);
 	glBindVertexArray(vaoID);
 	this->vaolist.push_back(vaoID);
 	return vaoID;
 }
-void WheresTheLambSauce::storeDataInAttributeList(int number, float *data, int length, int coordSize) {
+void Loader::storeDataInAttributeList(int number, float *data, int length, int coordSize) {
 	GLuint vboID = 0;
 	//printf("Hellllllo\n");
 	//printf("%p\n", &vboID);
@@ -63,7 +63,7 @@ void WheresTheLambSauce::storeDataInAttributeList(int number, float *data, int l
 	this->vbolist.push_back(vboID);
 
 }
-void WheresTheLambSauce::bindIndicesBuffer(int* indicies, int length) {
+void Loader::bindIndicesBuffer(int* indicies, int length) {
 	GLuint vboID = 0;
 	glGenBuffers(1,&vboID);
 	this->vbolist.push_back(vboID);
@@ -71,6 +71,6 @@ void WheresTheLambSauce::bindIndicesBuffer(int* indicies, int length) {
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, length * sizeof(int), indicies, GL_STATIC_DRAW);
 }
 
-void WheresTheLambSauce::unbindVAO() {
+void Loader::unbindVAO() {
 	glBindVertexArray(0);
 }

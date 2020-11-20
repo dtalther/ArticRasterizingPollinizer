@@ -21,45 +21,33 @@
     <ClCompile Include="window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItsEffingRaw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WheresTheLambSauce.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="YoureCookingInABurnedPanYouEffingDick.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CookTheSpinachToOrderYouLazyCow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EffingDonkey.cpp">
+    <ClCompile Include="TexturedModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AnEffingRawDonkey.cpp">
+    <ClCompile Include="BasicShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dish.cpp">
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RawModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItsEffingRaw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WheresTheLambSauce.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="YoureCookingInABurnedPanYouEffingDick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CookTheSpinachToOrderYouLazyCow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Util.h">
@@ -68,13 +56,25 @@
     <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EffingDonkey.h">
+    <ClInclude Include="TexturedModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AnEffingRawDonkey.h">
+    <ClInclude Include="BasicShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dish.h">
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RawModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

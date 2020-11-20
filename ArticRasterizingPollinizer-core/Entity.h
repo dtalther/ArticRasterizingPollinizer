@@ -1,18 +1,19 @@
 #pragma once
-#include "AnEffingRawDonkey.h"
+#include "TexturedModel.h"
 #include "glm.hpp"
 namespace ARP {
-	class Dish {
+	class Entity {
 	private:
-		HellsKitchen::AnEffingRawDonkey donkey;
+		HellsKitchen::TexturedModel donkey;
 		glm::vec3 position;
 		glm::vec3 rotation;
 		glm::vec3 scale;
 	public:
-		Dish(HellsKitchen::AnEffingRawDonkey donkey, glm::vec3 position, glm::vec3 rotation, glm::vec3 scale);
+		Entity(HellsKitchen::TexturedModel donkey, glm::vec3 position, glm::vec3 rotation, glm::vec3 scale);
 		void increasePosition(glm::vec3 pos);
 		void increaseRotation(glm::vec3 rot);
-		HellsKitchen::AnEffingRawDonkey getDonkey();
+		void increaseScale(glm::vec3 scale);
+		HellsKitchen::TexturedModel getDonkey();
 		glm::vec3 getPosition();
 		glm::vec3 getRotation();
 		glm::vec3 getScale();

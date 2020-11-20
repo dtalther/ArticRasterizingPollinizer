@@ -1,6 +1,6 @@
-#include "ItsEffingRaw.h"
+#include "RawModel.h"//RawModel
 using namespace ARP::HellsKitchen;
-ItsEffingRaw::ItsEffingRaw(int vaoID, int vertexcount) {
+RawModel::RawModel(int vaoID, int vertexcount) {
 	this->vaoID = vaoID;
 	this->vertexcount = vertexcount;
 }
