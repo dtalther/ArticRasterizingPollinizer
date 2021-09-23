@@ -20,28 +20,35 @@ void BasicRenderer::prepare() {
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 }
-void BasicRenderer::render(Entity plate, BasicShader &spinach,int width,int height, BasicShader &shader, Player &player) {
-	TexturedModel rawdonkey = plate.getDonkey();
-	RawModel food = rawdonkey.raw;
-	int tloc = shader.getUniformLocation("transformationMatrix");
-	int ploc = shader.getUniformLocation("projectionMatrix");
-	int vloc = shader.getUniformLocation("viewMatrix");
-	glm::mat4 vmatrix = ARP::Utilites::createTransformMatrix(-player.playerCam.position,-player.playerCam.rotation,-(glm::vec3(1,1,1)));
-	glm::mat4 pmatrix = createProjectionMatrix(width, height);
-	spinach.loadMatrix(vloc, vmatrix);
-	spinach.loadMatrix(ploc, pmatrix);
-	glBindVertexArray(food.getvaoID());
-	glEnableVertexAttribArray(0);
-	glEnableVertexAttribArray(1);
-	glm::mat4 transformationMatrix = ARP::Utilites::createTransformMatrix(plate.getPosition(),plate.getRotation(),plate.getScale());
-	spinach.loadMatrix(tloc,transformationMatrix);
-	//printf("%d\n", rawdonkey.donkey.getTextureID());
+void BasicRenderer::render(std::vector<Entity*> entities, BasicShader &shader,int width,int height, Player &player) {
+	for (auto entity : entities) {
 
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, rawdonkey.donkey.getTextureID());
+		TexturedModel textureModel = (*entity).getTexture();
+		RawModel rawModel = textureModel.raw;
 
-	glDrawElements(GL_TRIANGLES,food.getvertexcount(),GL_UNSIGNED_INT,0);
-	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(1);
-	glBindVertexArray(0);
+		int tloc = shader.getUniformLocation("transformationMatrix");
+		int ploc = shader.getUniformLocation("projectionMatrix");
+		int vloc = shader.getUniformLocation("viewMatrix");
+
+		glm::mat4 vmatrix = ARP::Utilites::createTransformMatrix(-player.playerCam.position, -player.playerCam.rotation, -(glm::vec3(1, 1, 1)));
+		glm::mat4 pmatrix = createProjectionMatrix(width, height);
+
+		shader.loadMatrix(vloc, vmatrix);
+		shader.loadMatrix(ploc, pmatrix);
+
+		glBindVertexArray(rawModel.getvaoID());
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+
+		glm::mat4 transformationMatrix = ARP::Utilites::createTransformMatrix((*entity).getPosition(), (*entity).getRotation(), (*entity).getScale());
+		shader.loadMatrix(tloc, transformationMatrix);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, textureModel.texture.getTextureID());
+
+		glDrawElements(GL_TRIANGLES, rawModel.getvertexcount(), GL_UNSIGNED_INT, 0);
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+		glBindVertexArray(0);
+	}
 }

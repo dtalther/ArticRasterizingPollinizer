@@ -1,7 +1,7 @@
 #include "Entity.h"//Entity
 using namespace ARP;
-ARP::Entity::Entity(HellsKitchen::TexturedModel donkey, glm::vec3 position, glm::vec3 rotation, glm::vec3 scale) : donkey(donkey){
-	//this->donkey = donkey;
+ARP::Entity::Entity(glm::vec3 position, glm::vec3 rotation, glm::vec3 scale, HellsKitchen::TexturedModel texture) : texture(texture){
+	//this->texture = texture;
 	this->position = position;
 	this->rotation = rotation;
 	this->scale = scale;
@@ -19,9 +19,9 @@ void ARP::Entity::increaseScale(glm::vec3 scale){
 	this->scale += scale;
 }
 
-HellsKitchen::TexturedModel ARP::Entity::getDonkey()
+HellsKitchen::TexturedModel ARP::Entity::getTexture()
 {
-	return donkey;
+	return texture;
 }
 
 glm::vec3 ARP::Entity::getPosition()

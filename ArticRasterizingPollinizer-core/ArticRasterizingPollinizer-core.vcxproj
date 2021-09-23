@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicShapes.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TexturedModel.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="BasicRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicShapes.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="TexturedModel.h" />

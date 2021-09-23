@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <streambuf>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace ARP::Utilites;
 
@@ -21,6 +23,14 @@ glm::mat4 ARP::Utilites::createTransformMatrix(glm::vec3 translation, glm::vec3 
 	glm::mat4 scalematrix = glm::scale(scale);
 	matrix *= scalematrix;
 	return matrix;
+}
+
+int ARP::Utilites::generateRandomNumber(int range)
+{
+	srand(time(0));
+	int num = rand() % range;
+	
+	return num;
 }
 
 

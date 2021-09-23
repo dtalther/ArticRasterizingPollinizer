@@ -5,9 +5,9 @@ namespace ARP {
 	namespace HellsKitchen {
 		class TexturedModel {
 		public:
-			TexturedModel(RawModel raw, Texture donkey);
+			TexturedModel(RawModel raw, Texture texture);
 			RawModel raw;
-			Texture donkey;
+			Texture texture;
 		};
 	}
 }

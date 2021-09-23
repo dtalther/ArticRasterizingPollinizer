@@ -14,6 +14,7 @@ void ARP::Player::move(float speed){
 	int s = glfwGetKey(window, GLFW_KEY_S);
 	int d = glfwGetKey(window, GLFW_KEY_D);
 	int jump = glfwGetKey(window, GLFW_KEY_SPACE);
+	int descend = glfwGetKey(window, GLFW_KEY_C);
 	if (w == GLFW_PRESS) {
 		playerCam.move(playerCam.position + glm::vec3(0.0,0.0,-speed));
 	}
@@ -29,19 +30,7 @@ void ARP::Player::move(float speed){
 	if (jump == GLFW_PRESS) {
 		playerCam.move(playerCam.position + glm::vec3(0.0, speed, 0.0));
 	}
+	if (descend == GLFW_PRESS) {
+		playerCam.move(playerCam.position + glm::vec3(0.0, -speed, 0.0));
+	}
 }
-
-/*void keyCallBack(GLFWwindow *window, int key, int scancode, int action, int mods) {
-	if (key == GLFW_KEY_W) {
-		
-	}
-	if (key == GLFW_KEY_A) {
-
-	}
-	if (key == GLFW_KEY_D) {
-
-	}
-	if (key == GLFW_KEY_S) {
-
-	}
-}*/

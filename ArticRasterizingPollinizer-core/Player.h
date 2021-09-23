@@ -8,6 +8,7 @@ namespace ARP {
 		public:
 			Player(GLFWwindow* window);
 			void move(float speed);
+			
 			GLFWwindow* window;
 			Camera playerCam;
 	};

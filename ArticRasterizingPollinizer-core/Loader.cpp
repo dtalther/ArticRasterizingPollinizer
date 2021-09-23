@@ -22,8 +22,8 @@ RawModel Loader::loadtoVAO(float* positions, float* textureCoords, int length, i
 	storeDataInAttributeList(0,positions,length,3);
 	storeDataInAttributeList(1, textureCoords, tlength, 2);
 	unbindVAO();
-	RawModel sauce(vaoID, ilength);
-	return sauce;
+	RawModel model(vaoID, ilength);
+	return model;
 
 }
 int ARP::HellsKitchen::Loader::loadTexture(std::string filename)

@@ -9,5 +9,7 @@ namespace ARP {
 
 		glm::mat4 createTransformMatrix(glm::vec3 translation, glm::vec3 rotation, glm::vec3 scale);
 
+		int generateRandomNumber(int range);
+
 	}
 }
