@@ -15,8 +15,8 @@ namespace ARP {
 			glm::mat4 createProjectionMatrix(int width, int height);
 		public:
 			void prepare();
-			void render(std::vector<Entity*> entities, BasicShader &spinach, int width,int height, Player &player);
-
+			void render(Entity entity, BasicShader &shader, int width,int height, Player &player);
+			void renderCollection(std::vector<Entity> entities, BasicShader& shader, int width, int height, Player& player);
 			
 
 		};

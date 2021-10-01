@@ -25,12 +25,34 @@ glm::mat4 ARP::Utilites::createTransformMatrix(glm::vec3 translation, glm::vec3 
 	return matrix;
 }
 
-int ARP::Utilites::generateRandomNumber(int range)
+
+int ARP::Utilites::RandomGenerator::generateRandomNumber(int range)
 {
-	srand(time(0));
-	int num = rand() % range;
-	
-	return num;
+	std::random_device dev;
+	std::mt19937 rng(dev());
+	std::uniform_int_distribution<std::mt19937::result_type> dist(0, range); 
+
+	return dist(rng);
+}
+float ARP::Utilites::playerEntityDistance(glm::vec3 myPosition, glm::vec3 theirPosition) {
+	float dist = sqrt(pow((theirPosition[0] - (myPosition[0] * -1)), 2.0) + pow((theirPosition[1] - (myPosition[1]*-1)), 2.0) + pow((theirPosition[2] - (-1*myPosition[2])), 2.0));
+	/*std::cout << "--------------------------------\n";
+	std::cout << theirPosition[0];
+	std::cout << "\n";
+	std::cout << theirPosition[1];
+	std::cout << "\n";
+	std::cout << theirPosition[2];
+	std::cout << "\n";
+	std::cout << "----------SLICE---------\n";
+	std::cout << myPosition[0] * -1;
+	std::cout << "\n";
+	std::cout << myPosition[1] * -1;
+	std::cout << "\n";
+	std::cout << myPosition[2] * -1;
+	std::cout << "\n Distance: ";
+	std::cout << dist;
+	std::cout << "\n--------------------------------\n";*/
+	return dist;
 }
 
 

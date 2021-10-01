@@ -15,6 +15,7 @@ BasicShader::BasicShader(std::string vfilename, std::string ffilename) {
     bool f = compileShader(fshaderCode, fID);
     if (v && f) {
         this->programID = glCreateProgram();
+        printf("%d -- ",programID);
         glAttachShader(programID, vID);
         glAttachShader(programID, fID);
         glLinkProgram(programID);

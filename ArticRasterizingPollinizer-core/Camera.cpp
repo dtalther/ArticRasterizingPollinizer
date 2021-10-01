@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include <GLFW/glfw3.h>;
+#include <iostream>;
 using namespace ARP;
 
 ARP::Camera::Camera() {

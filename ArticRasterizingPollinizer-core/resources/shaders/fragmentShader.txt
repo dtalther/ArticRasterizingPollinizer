@@ -6,9 +6,10 @@ out vec4 out_Color;
 
 uniform sampler2D texSampler;
 uniform float time;
+uniform float pos;
 void main(void){
 	vec4 z = texture(texSampler,pass_texCoords);
-	vec4 w = abs(cos(time))*vec4(z.r,z.r,z.r,z.r);
-	vec4 q = vec4(pass_texCoords.x,pass_texCoords.y*sin(time),cos(time),1);
-	out_Color = mix(w,q,time);
+	vec4 w = vec4(z.r,z.r,z.r,z.r);
+	vec4 q = vec4(1,1,1,1);
+	out_Color = vec4(0.0,pos,1.0, 1.0);
 }

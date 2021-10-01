@@ -147,8 +147,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BasicShapes.cpp" />
+    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="TexturedModel.cpp" />
     <ClCompile Include="BasicShader.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -162,8 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicShapes.h" />
+    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="TexturedModel.h" />
     <ClInclude Include="BasicShader.h" />
     <ClInclude Include="Entity.h" />
@@ -177,6 +183,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="resources\shaders\fragmentShader.txt" />
+    <Text Include="resources\shaders\fragmentSolid.txt" />
+    <Text Include="resources\shaders\fragmentSolid2.txt" />
     <Text Include="resources\shaders\vertexShader.txt" />
   </ItemGroup>
   <ItemGroup>

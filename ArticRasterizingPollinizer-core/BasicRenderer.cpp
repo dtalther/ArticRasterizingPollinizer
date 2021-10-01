@@ -20,11 +20,11 @@ void BasicRenderer::prepare() {
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 }
-void BasicRenderer::render(std::vector<Entity*> entities, BasicShader &shader,int width,int height, Player &player) {
-	for (auto entity : entities) {
+void BasicRenderer::render(Entity entity, BasicShader &shader,int width,int height, Player &player) {
 
-		TexturedModel textureModel = (*entity).getTexture();
+		TexturedModel textureModel = entity.getTexture();
 		RawModel rawModel = textureModel.raw;
+		shader.start();
 
 		int tloc = shader.getUniformLocation("transformationMatrix");
 		int ploc = shader.getUniformLocation("projectionMatrix");
@@ -40,7 +40,7 @@ void BasicRenderer::render(std::vector<Entity*> entities, BasicShader &shader,in
 		glEnableVertexAttribArray(0);
 		glEnableVertexAttribArray(1);
 
-		glm::mat4 transformationMatrix = ARP::Utilites::createTransformMatrix((*entity).getPosition(), (*entity).getRotation(), (*entity).getScale());
+		glm::mat4 transformationMatrix = ARP::Utilites::createTransformMatrix(entity.getPosition(), entity.getRotation(), entity.getScale());
 		shader.loadMatrix(tloc, transformationMatrix);
 
 		glActiveTexture(GL_TEXTURE0);
@@ -50,5 +50,12 @@ void BasicRenderer::render(std::vector<Entity*> entities, BasicShader &shader,in
 		glDisableVertexAttribArray(0);
 		glDisableVertexAttribArray(1);
 		glBindVertexArray(0);
+		shader.stop();
+}
+
+void ARP::HellsKitchen::BasicRenderer::renderCollection(std::vector<Entity> entities, BasicShader& shader, int width, int height, Player& player)
+{
+	for (auto &entity : entities) {
+		render(entity, shader, width, height, player);
 	}
 }
